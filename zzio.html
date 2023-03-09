@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../libs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../libs/css/bootstrap-utilities.min.css">
+</head>
+<body>
+<div class="container">
+			<div  class="row">
+				<div class="col-sm-12">
+					<br><br>
+				<h4> ฝากเงิน-โอนเงิน ผ่านทุกธนาคาร </h4>
+			       
+			</div>
+				<div class="col-sm-3">
+					<form  method="get">
+						<div class="form-group row">
+						<label for="cashmethod">เลือกวิธีชำระเงิน</label>
+						<select onchange="yesnoCheck(this);" class="form-control" name="cashmethod" required>
+							<option value="">-วิธีชำระเงิน-</option>
+							<option value="เงินสด">เงินสด</option>
+							<option value="โอนเงิน">โอนเงิน</option>
+						</select>
+					</div>
+					<div class="form-group row" id="ifcash" style="display: none;">		 
+							<label for="bank">เลือกธนาคารที่โอนเงิน</label>
+							<select name="bank" class="form-control">
+								<option value="">เลือกธนาคารที่โอนเงิน</option>
+								<option value="1">กรุงศรีอยุธยา</option>
+								<option value="2">กรุงไทย</option>
+								<option value="3">กสิกรไทย</option>
+								<option value="4">กรุงเทพ</option>
+								<option value="5">ไทยพาณิชย์</option>
+								<option value="6">ทีเอ็มบีธนาชาต</option>
+							</select> 
+					</div>
+					<div class="form-group row">
+						<label for="amount">จำนวนเงิน</label>
+						<input type="number" name="amount" required min="0" class="form-control">
+					</div>
+					<div class="form-group row">
+						<button type="submit" class="btn btn-primary">SAVE</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		function yesnoCheck(that) {
+				if (that.value == "โอนเงิน") {
+					document.getElementById("ifcash").style.display = "block";
+		} else {
+					document.getElementById("ifcash").style.display = "none";
+			}
+		}
+		</script>
+</body>
+</html>
